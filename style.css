@@ -64,6 +64,22 @@ form{
   }
   button{
     grid-column: 1 / -1;
+  }  
+}
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-rows: subgrid;
+  gap: 1em;
+
+  article{
+    grid-row: span 3;
+    h2{
+      margin: 0;
+      line-height: 1.1;
+      text-wrap: balance;
+    }
   }
-  
+
 }
