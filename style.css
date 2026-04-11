@@ -90,6 +90,48 @@ form{
 
 #info{
   text-align: center;
+  padding-bottom: .2em;
+  line-height: 1.1;
+
 }
 
+section{
+  h2{
+    border-bottom-style: solid;
+  }
+  h3{
+    display: flex;
+    margin: 0;
+    line-height: 1.1;
+    text-wrap: balance;
+    align-items: baseline;
+    justify-content: space-between;
+    
+  }
 
+  article{
+    margin-bottom: 1em;
+  }
+  article ul{
+    display: block;
+    list-style-type: disc;
+    padding-left: 2em;
+    margin: 0;
+
+
+    li{
+      display: list-item;
+      padding-top: 0.25em;
+    }
+  }
+
+   article span{
+    font-weight: normal;
+    white-space: nowrap;
+    margin-left: 1em;
+  }
+  
+  
+
+
+}
