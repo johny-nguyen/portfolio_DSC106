@@ -61,10 +61,19 @@ form{
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
+    font: inherit;
+
   }
   button{
     grid-column: 1 / -1;
+
   }  
+
+  textarea{
+    font: inherit;
+  }
+
+
 }
 
 .projects{
