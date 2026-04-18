@@ -17,10 +17,10 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: '', title: 'Home' },
-  { url: 'projects/index.html', title: 'Projects' },
-  { url: 'contact/index.html', title: 'Contacts' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contacts' },
   { url: 'https://github.com/johny-nguyen', title: 'Profile'},
-  { url: 'cv/index.html', title: 'CV' },
+  { url: 'cv/', title: 'CV' },
 ];
 
 let nav = document.createElement('nav');
