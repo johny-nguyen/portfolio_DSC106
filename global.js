@@ -80,15 +80,15 @@ if ("colorScheme" in localStorage){
   select.value = color_scheme;
 }
 
-let form = document.querySelector('form');
+// let form = document.querySelector('form');
 
-form?.addEventListener('submit', function (event){
-  event.preventDefault();
-  let data = new FormData(form);
-  for (let [name, value] of data) {
-  // TODO build URL parameters here
-    console.log(name, encodeURIComponent(value));
-  }
-  // location.href = url;
+// form?.addEventListener('submit', function (event){
+//   event.preventDefault();
+//   let data = new FormData(form);
+//   for (let [name, value] of data) {
+//   // TODO build URL parameters here
+//     console.log(name, encodeURIComponent(value));
+//   }
+//   // location.href = url;
 
-});
+// });
