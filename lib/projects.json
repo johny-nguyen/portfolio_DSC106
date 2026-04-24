@@ -8,13 +8,13 @@
     {
         "title": "Genre Prediction Based on Reviews",
         "year": "2025",
-        "image": "ok",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/GenrePrediction.png",
         "description": "Made during DataHacks 2025, this project uses natural language processing to predict the genre of a video game genre based on its reviews."
     },
     {
-        "title": "Quibusdam distinctio voluptates eaque.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Sed, perspiciatis. Porro, eos sunt voluptas tempore est hic vitae distinctio enim ipsum! Facere culpa distinctio dolorem cumque eaque et impedit consequatur laudantium sequi doloribus veniam, ipsum minus odio rem!"
+        "title": "League of Legends Action Analysis",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/LeagueOfLegendsActionAnalysis.png",
+        "description": "This project uses the Riot Games API to analyze how action-packed a League of Legends esports match is. The project uses a combination of data analysis and machine learning to predict the outcome of a match based on the actions that occur during the game."
     },
     {
         "title": "Quidem eius facere debitis?",
