@@ -93,12 +93,18 @@ form{
       line-height: 1.1;
       text-wrap: balance;
     }
+    img{
+    width: 100%;
+    object-fit: cover;
+    }
   }
 
   h1,h2,h3,h4,h5,h6{
     line-height: 1.1;
     text-wrap: balance;
   }
+
+  
 }
 
 #info{
@@ -152,4 +158,28 @@ section{
     right: 0.5rem;
     font-size: 80%;
     font-family: inherit;
+}
+
+
+#profile-stats{
+  div h2{
+    margin: 1em 0 0.5em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  dl{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 1;
+    font-size: 24px;
+  }
+
+  dd{
+    grid-row: 2;
+    margin: 0;
+  }
+  dt{
+        color: rgb(39, 37, 37);
+        font-weight: bold;
+  }
 }

@@ -1,13 +1,15 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid provident id nihil, eveniet odit, veniam amet dolorum maiores inventore nobis vitae nesciunt ullam autem. Alias accusantium voluptatum reprehenderit! Possimus, nisi."
+        "title": "Prospect Game",
+        "year": "2026",
+        "image": "../images/ProspectTheoryGame.png",
+        "description": "A game that simulates the decision making process of a person in a risky situation. The game is based on the prospect theory, which is a behavioral economic theory that describes how people make decisions under risk. "
     },
     {
-        "title": "Obcaecati facere sed exercitationem.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Eligendi velit repudiandae quos quas quam incidunt. Odio alias blanditiis quo, facilis nam quia delectus, nisi ipsum minus ipsa repellat, quos consequatur? Excepturi nisi dolorum eveniet fugit? Facere, similique neque."
+        "title": "Genre Prediction Based on Reviews",
+        "year": "2025",
+        "image": "../images/GenrePrediction.png",
+        "description": "Made during DataHacks 2025, this project uses natural language processing to predict the genre of a video game genre based on its reviews."
     },
     {
         "title": "Quibusdam distinctio voluptates eaque.",
