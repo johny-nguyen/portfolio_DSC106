@@ -2,13 +2,13 @@
     {
         "title": "Prospect Game",
         "year": "2026",
-        "image": "/images/ProspectTheoryGame.png",
+        "image": "../images/ProspectTheoryGame.png",
         "description": "A game that simulates the decision making process of a person in a risky situation. The game is based on the prospect theory, which is a behavioral economic theory that describes how people make decisions under risk. "
     },
     {
         "title": "Genre Prediction Based on Reviews",
         "year": "2025",
-        "image": "/images/GenrePrediction.png",
+        "image": "../images/GenrePrediction.png",
         "description": "Made during DataHacks 2025, this project uses natural language processing to predict the genre of a video game genre based on its reviews."
     },
     {
