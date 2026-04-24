@@ -2,7 +2,7 @@
     {
         "title": "Prospect Game",
         "year": "2026",
-        "image": "images/ProspectTheoryGame.png",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/ProspectTheoryGame.png",
         "description": "A game that simulates the decision making process of a person in a risky situation. The game is based on the prospect theory, which is a behavioral economic theory that describes how people make decisions under risk. "
     },
     {
