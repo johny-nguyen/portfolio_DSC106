@@ -93,3 +93,55 @@ form?.addEventListener('submit', function (event){
   // location.href = url;
 
 });
+
+//lab 4
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+
+
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2'){
+
+  // Checks if containerElement is provided and is a valid HTML element
+  if (!containerElement){
+    throw new Error('Container element is required');
+  }
+
+  if (!(containerElement instanceof HTMLElement)) {
+    throw new Error("containerElement must be a valid HTML element");
+  }
+
+  // Checks if projects is a non-empty array
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects to display.</p>';
+    return;
+  }
+
+  const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!headingTags.includes(headingLevel)) {
+    headingLevel = 'h2'; // Defaults to h2 if invalid heading level
+  }
+  containerElement.innerHTML = '';
+  //Create loop for each project
+  for (let project of projects){
+    
+    const article = document.createElement('article');
+    article.innerHTML = `
+    <${headingLevel}>${project.title}</${headingLevel}>
+    <img src="${project.image || 'https://vis-society.github.io/labs/2/images/empty.svg'}" alt="${project.title}">
+    <p>${project.description}</p>`;
+
+    containerElement.appendChild(article);
+  }
+}
