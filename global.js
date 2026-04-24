@@ -135,7 +135,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2'){
   containerElement.innerHTML = '';
   //Create loop for each project
   for (let project of projects){
-    
     const article = document.createElement('article');
     article.innerHTML = `
     <${headingLevel}>${project.title}</${headingLevel}>
