@@ -17,9 +17,9 @@
         "description": "This project uses the Riot Games API to analyze how action-packed a League of Legends esports match is. The project uses a combination of data analysis and machine learning to predict the outcome of a match based on the actions that occur during the game."
     },
     {
-        "title": "Quidem eius facere debitis?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Fugiat, minima. Quaerat saepe at molestias earum aliquid nesciunt distinctio aspernatur quibusdam excepturi optio et velit, voluptatum, consectetur officia! Voluptates dicta ab culpa sit! Nam, magnam pariatur! Ipsa, blanditiis eum."
+        "title": "OpenCLIP Image Classification",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/OpenClipProject.png",
+        "description": "This project uses the OpenCLIP model to classify images into different categories. It leverages the power of contrastive learning to achieve high accuracy in image classification tasks."
     },
     {
         "title": "Laboriosam saepe odio fugit.",
