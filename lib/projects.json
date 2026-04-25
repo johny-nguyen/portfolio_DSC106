@@ -13,18 +13,21 @@
     },
     {
         "title": "League of Legends Action Analysis",
+        "year": "2025",
         "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/LeagueActionAnalysis.png",
         "description": "This project uses the Riot Games API to analyze how action-packed a League of Legends esports match is. The project uses a combination of data analysis and machine learning to predict the outcome of a match based on the actions that occur during the game."
     },
     {
         "title": "OpenCLIP Image Classification",
+        "year": "2025",
         "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/OpenClipProject.png",
         "description": "This project uses the OpenCLIP model to classify images into different categories. It leverages the power of contrastive learning to achieve high accuracy in image classification tasks."
     },
     {
-        "title": "Laboriosam saepe odio fugit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Provident in, voluptatum fuga quidem vel modi quisquam enim ratione sapiente laudantium velit recusandae animi distinctio accusantium voluptates, omnis ullam harum unde necessitatibus magni corrupti consequatur? Exercitationem eveniet sunt quibusdam."
+        "title": "Target Receipts Redesign",
+        "year": "2024",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/TargetReceiptsRedesign.png",
+        "description": "Redesigned Target receipts to be more user-friendly and visually appealing. The redesign includes a new layout, improved typography, and the addition of icons to make it easier for customers to understand their purchases and savings."
     },
     {
         "title": "Incidunt fuga iure inventore.",
