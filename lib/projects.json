@@ -13,7 +13,7 @@
     },
     {
         "title": "League of Legends Action Analysis",
-        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/LeagueOfLegendsActionAnalysis.png",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/LeagueActionAnalysis.png",
         "description": "This project uses the Riot Games API to analyze how action-packed a League of Legends esports match is. The project uses a combination of data analysis and machine learning to predict the outcome of a match based on the actions that occur during the game."
     },
     {
