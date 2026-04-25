@@ -48,23 +48,27 @@
         "description": "A choose your own adventure story that I collaborated on with a group of peers. The story involves topics based on the course material of CAT 3 and explores dystopian themes."
     },
     {
-        "title": "Fuga quidem illum aliquid.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Error laborum suscipit porro mollitia aliquam rerum at? Aperiam officiis minus alias nulla, est obcaecati adipisci quibusdam sed ipsam, deserunt facilis aliquam assumenda eum reprehenderit repudiandae vel a error eveniet?"
+        "title": "Winning Ways in the NBA",
+        "year": "2025",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/COGS108FINAL.png",
+        "description": "A project that compares offensive and defensive statistics of NBA teams to determine which is more important for winning games. The project uses data analysis techniques to analyze the statistics and make predictions about the importance of offense and defense in winning games."
     },
     {
-        "title": "Dolor exercitationem voluptatibus illo.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ullam voluptas ducimus sunt! Laudantium excepturi velit beatae quasi itaque! Odit voluptatum provident reiciendis doloremque expedita perferendis dolore nobis ad aspernatur ex necessitatibus cupiditate magni, tenetur est, illo eius! Explicabo?"
+        "title": "K-Nearest Neighbors Algorithm",
+        "year": "2025",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/KNN.png",
+        "description": "This project uses different python packages to implement the K-Nearest Neighbors algorithm for classification tasks. The project includes a comparison of different implementations of the algorithm and an analysis of their performance on different datasets."
     },
     {
-        "title": "A et sint aliquid.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptatem, maxime! Iste dolor quisquam, rem vitae tempore dolores obcaecati quod optio, delectus, a soluta vel ipsum. Inventore obcaecati illo quas. Laudantium, quis? Accusantium, modi aliquid magnam quasi temporibus porro."
+        "title": "Perceptron & Logistic Regression",
+        "year": "2025",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/Perceptron.png",
+        "description": "This project implemenats a perceptron and logistic regression model from scratch using python and other supporting packages. The project includes an analysis of the performance of the models on different datasets and a comparison of their strengths and weaknesses."
     },
     {
-        "title": "Soluta beatae quibusdam exercitationem.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Laborum dolore neque dolorum nostrum? Nam, quia perferendis tempora eaque ducimus consequatur, sit rem recusandae aspernatur, temporibus eveniet ex. Numquam aspernatur debitis, dolor excepturi sit assumenda cumque tempore et officia."
+        "title": "Friends Final Project",
+        "year": "2024",
+        "image": "https://johny-nguyen.github.io/portfolio_DSC106/images/DSC10FINAL.png",
+        "description": "A final project for DSC 10 that analyzes the TV show Friends. The project includes parsing text data from the show, analyzing the relationships betweeen character diaglogue using pandas and numpy."
     }
 ]
