@@ -183,3 +183,10 @@ section{
         font-weight: bold;
   }
 }
+
+.project-description{
+  .year{
+    font-family: 'Baskerville', serif;
+    font-variant-numeric: oldstyle-nums;
+  }
+}
