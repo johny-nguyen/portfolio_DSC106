@@ -118,6 +118,35 @@ function renderPieChart(projectsGiven) {
   newArcs.forEach((arc, idx) => {
   d3.select('svg').append('path').attr('d', arc).attr('fill', colors(idx));
   });
+  
+  let selectedIndex = -1;
+
+  //Step 5.2 - Highlighting Selected Wedge
+  let svg = d3.select('svg');
+  svg.selectAll('path').remove();
+  newArcs.forEach((arc, i) => {
+    svg
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', colors(i))
+      .on('click', () => {
+        // What should we do? (Keep scrolling to find out!)
+        selectedIndex = selectedIndex === i ? -1 : i;
+        svg.selectAll('path').attr('class',(_,idx) => (idx === selectedIndex ? 'selected' : ''));
+
+        legend.selectAll('li').attr('class', (_, idx) => (idx === selectedIndex ? 'legend-item selected' : 'legend-item'));
+
+        if(selectedIndex === -1){
+          renderProjects(projects, projectsContainer, 'h2');
+        } else{
+          let selectedYear = newData[selectedIndex].label;
+          let filteredProjects = projects.filter(project => project.year === selectedYear);
+          renderProjects(filteredProjects, projectsContainer, 'h2');
+        }
+
+      });
+  });
+
 
   let legend = d3.select('.legend');
   newData.forEach((d, idx) => {
@@ -126,7 +155,10 @@ function renderPieChart(projectsGiven) {
       .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
       .attr('class', 'legend-item')
       .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
+
+    
   });
+  
 }
 
 // Call this function on page load
@@ -135,7 +167,31 @@ renderPieChart(projects);
 searchInput.addEventListener('input', (event) => {
   query = event.target.value;
   let filteredProjects = setQuery(event.target.value);
+
+
+  
   // re-render legends and pie chart when event triggers
   renderProjects(filteredProjects, projectsContainer, 'h2');
   renderPieChart(filteredProjects);
 });
+
+
+// Indexing
+// let selectedIndex = -1;
+
+// let svg = d3.select('svg');
+// svg.selectAll('path').remove();
+// arcs.forEach((arc, i) => {
+//   svg
+//     .append('path')
+//     .attr('d', arc)
+//     .attr('fill', colors(i))
+//     .on('click', () => {
+//       // What should we do? (Keep scrolling to find out!)
+//       selectedIndex = selectedIndex === i ? -1 : i;
+//       svg.selectAll('path').attr('class',(_,idx) => (idx === selectedIndex ? 'selected' : ''));
+      
+//     });
+
+
+// });
