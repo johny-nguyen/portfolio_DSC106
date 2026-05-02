@@ -14,13 +14,7 @@ body {
 }
 
 
-ul{
-  display: contents
-}
 
-li{
-  display: contents
-}
 
 nav{
   
@@ -29,7 +23,13 @@ nav{
   border-bottom-width: 1px;
   border-bottom-style: solid;
   /* border-bottom-color: oklch(80% 3% 200); */
-  
+  ul{
+    display: contents
+  }
+
+  li{
+    display: contents
+  }
 
 }
 
@@ -189,4 +189,49 @@ section{
     font-family: 'Baskerville', serif;
     font-variant-numeric: oldstyle-nums;
   }
+}
+
+#projects-plot{
+  max-width: 20em;
+  margin-block: 2em;
+
+
+  overflow: visible;
+}
+
+.swatch{
+  display:inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 50%;
+  align-items: center;
+  gap: 1em;
+  
+}
+
+.legend{
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  border-top: 1px solid;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.legend-item{
+  display: flex;
+  gap: 0.5em;
+  text-align: center;
+ 
+
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
