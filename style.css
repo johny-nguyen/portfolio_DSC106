@@ -254,3 +254,26 @@ path{
     fill: var(--color);
   }
 }
+
+#stats{
+  dl{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 1;
+    font-size: 20px;
+  }
+
+  dd{
+    grid-row: 2;
+    margin: 0;
+  }
+
+  dt{
+    font-size: 16px;
+    color: gray
+  }
+}
+
+.gridlines{
+  opacity: 10%
+}
