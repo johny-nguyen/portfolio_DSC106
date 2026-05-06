@@ -21,6 +21,7 @@ let pages = [
   { url: 'contact/', title: 'Contacts' },
   { url: 'https://github.com/johny-nguyen', title: 'Profile'},
   { url: 'cv/', title: 'CV' },
+  { url: 'meta/', title: 'Meta' }
 ];
 
 let nav = document.createElement('nav');
