@@ -270,10 +270,65 @@ path{
 
   dt{
     font-size: 16px;
-    color: gray
+    color: gray;
   }
 }
 
 .gridlines{
-  opacity: 10%
+  opacity: 10%;
 }
+
+dl.info{
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  margin: 0;
+  padding : 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 20px;
+
+
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+
+
+  dt{
+    grid-column: 1;
+    margin: 0;
+    
+    font-weight: bold;
+  }
+
+  dd{
+    grid-column: 2;
+    margin: 0;
+    padding-left: 1em;
+
+  }
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+.tooltip{
+  position: fixed;
+  top: 1em;
+  left: 1em
+}
+
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+
