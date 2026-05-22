@@ -322,9 +322,13 @@ dl.info[hidden]:not(:hover, :focus-within) {
 
 
 circle {
-  transition: 200ms;
+  transition: all 200ms, r calc(var(--r) * 100ms);
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+  r: 0;
+}
 }
 
 circle:hover {
@@ -395,3 +399,4 @@ circle.selected{
   flex: 1;
   width: 0%;
 }
+

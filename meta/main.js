@@ -150,12 +150,14 @@ gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 svg
   .append('g')
   .attr('transform', `translate(0, ${usableArea.bottom})`)
+  .attr('class', 'x-axis')
   .call(xAxis);
 
 // Add Y axis
 svg
   .append('g')
   .attr('transform', `translate(${usableArea.left}, 0)`)
+  .attr('class', 'y-axis')
   .call(yAxis);
 
 const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
@@ -169,7 +171,7 @@ dots.selectAll('circle').data(sortedCommits).join('circle');
 
 dots
   .selectAll('circle')
-  .data(sortedCommits)
+  .data(sortedCommits,(d) => d.id)
   .join('circle')
   .attr('cx', (d) => xScale(d.datetime))
   .attr('cy', (d) => yScale(d.hourFrac))
@@ -299,6 +301,8 @@ function renderLanguageBreakdown(selection) {
 let data = await loadData();
 
 let commits = processCommits(data);
+let filteredCommits = commits;
+
 
 let commitProgress = 100;
 
@@ -317,10 +321,110 @@ function onTimeSliderChange(){
   commitProgress = slider.value;
   commitMaxTime = timeScale.invert(commitProgress);
   timeDisplay.textContent = commitMaxTime.toLocaleString("en-US", { dateStyle: "long", timeStyle: "short"});
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  let totalCommits = filteredCommits.length;
+
+  updateCommitInfo(data, filteredCommits);
+  updateScatterPlot(data, filteredCommits);
 }
 slider.addEventListener('input', onTimeSliderChange);
 
-onTimeSliderChange();
+function updateScatterPlot(data, commits) {
+  const width = 1000;
+  const height = 600;
+  const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+  const usableArea = {
+    top: margin.top,
+    right: width - margin.right,
+    bottom: height - margin.bottom,
+    left: margin.left,
+    width: width - margin.left - margin.right,
+    height: height - margin.top - margin.bottom,
+  };
+
+  const svg = d3.select('#chart').select('svg');
+
+  xScale = xScale.domain(d3.extent(commits, (d) => d.datetime));
+
+  const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+  const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
+
+  const xAxis = d3.axisBottom(xScale);
+
+  // CHANGE: we should clear out the existing xAxis and then create a new one.
+  const xAxisGroup = svg.select('g.x-axis');
+  xAxisGroup.selectAll('*').remove();
+  xAxisGroup.call(xAxis);
+
+  const dots = svg.select('g.dots');
+
+  const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+  dots
+    .selectAll('circle')
+    .data(sortedCommits, (d) => d.id)
+    .join('circle')
+    .attr('cx', (d) => xScale(d.datetime))
+    .attr('cy', (d) => yScale(d.hourFrac))
+    .attr('r', (d) => rScale(d.totalLines))
+    .attr('fill', 'steelblue')
+    .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+    .on('mouseenter', (event, commit) => {
+      d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
+      renderTooltipContent(commit);
+      updateTooltipVisibility(true);
+      updateTooltipPosition(event);
+    })
+    .on('mouseleave', (event) => {
+      d3.select(event.currentTarget).style('fill-opacity', 0.7);
+      updateTooltipVisibility(false);
+    });
+}
+
+function updateCommitInfo(data, commits){
+  d3.select('#stats').selectAll('*').remove();
+
+  const dl = d3.select('#stats').append('dl').attr('class', 'stats');
+ 
+
+  // Add total LOC
+  dl.append('dt').html('TOTAL <abbr title="Lines of code">LOC</abbr>');
+  dl.append('dd').text(data.length);
+
+  // Add total commits
+  dl.append('dt').text('TOTAL COMMITS');
+  dl.append('dd').text(commits.length);
+
+  // Add more stats as needed...
+  // Add Files
+  dl.append('dt').text('TOTAL FILES');
+  dl.append('dd').text(d3.group(data, (d) => d.file).size);
+
+  //Time of Day
+    const workByPeriod = d3.rollups(
+    data,
+    (v) => v.length,
+    (d) => new Date(d.datetime).toLocaleString('en', { dayPeriod: 'short' }),
+    );
+
+    const maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
+
+  dl.append('dt').text('WHEN WORK IS DONE');
+  dl.append('dd').text(maxPeriod);
+
+  // Average File Length
+  const fileLengths = d3.rollups(
+  data,
+  (v) => d3.max(v, (v) => v.line),
+  (d) => d.file,
+ );
+  dl.append('dt').text('AVERAGE FILE LENGTH');
+  dl.append('dd').text(d3.mean(fileLengths, (d) => d[1]));
+
+  
+
+
+}
+
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 
